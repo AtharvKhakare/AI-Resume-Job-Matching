@@ -1,0 +1,34 @@
+# Python
+__pycache__/
+*.py[cod]
+venv/
+.venv/
+
+# Environment variables
+.env
+.env.*
+
+# React / Node
+node_modules/
+frontend/dist/
+frontend/.vite/
+
+# Uploaded files
+uploads/
+*.pdf
+
+# Local database / secrets
+*.db
+*.sqlite
+*.sqlite3
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
+
+My Document NEW.docx
+My Document.docx
