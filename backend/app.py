@@ -13,11 +13,17 @@ CORS(app)
 # --------------------------------------------------
 
 def get_db_connection():
-    connection = psycopg2.connect(
+    database_url = os.environ.get("DATABASE_URL")
+
+    if database_url:
+        return psycopg2.connect(database_url)
+
+    # Local PostgreSQL connection
+    return psycopg2.connect(
         host="localhost",
         database="login",
         user="postgres",
-        password="Atharv@2006",
+        password="YOUR_POSTGRES_PASSWORD",
         port="5432"
     )
 
