@@ -85,11 +85,12 @@ def register():
         }), 201
 
     except Exception as error:
+     print("REGISTER ERROR:", error)
 
-        return jsonify({
-            "message": "Registration failed",
-            "error": str(error)
-        }), 500
+    return jsonify({
+        "message": "Registration failed",
+        "error": str(error)
+    }), 500
 
 
 # --------------------------------------------------
