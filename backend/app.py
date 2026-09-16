@@ -27,8 +27,33 @@ def get_db_connection():
         port="5432"
     )
 
-    return connection
 
+# --------------------------------------------------
+# CREATE USERS TABLE IF NOT EXISTS
+# --------------------------------------------------
+
+def create_users_table():
+    try:
+        connection = get_db_connection()
+        cursor = connection.cursor()
+
+        cursor.execute("""
+            CREATE TABLE IF NOT EXISTS users (
+                id SERIAL PRIMARY KEY,
+                username VARCHAR(100) UNIQUE NOT NULL,
+                password VARCHAR(100) NOT NULL
+            )
+        """)
+
+        connection.commit()
+        cursor.close()
+        connection.close()
+
+        print("✅ Users table ready!")
+
+    except Exception as error:
+        print("❌ Users table creation failed:")
+        print(error)
 # --------------------------------------------------
 # REGISTER USER
 # --------------------------------------------------
@@ -152,6 +177,7 @@ def login():
 # --------------------------------------------------
 # TEST DATABASE CONNECTION
 # --------------------------------------------------
+create_users_table()
 
 try:
     connection = get_db_connection()
