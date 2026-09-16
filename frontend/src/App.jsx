@@ -26,7 +26,7 @@ function App() {
     };
 
     try {
-      const response = await fetch("http://127.0.0.1:5000/match-job", {
+      const response = await fetch("https://ai-resume-job-matching.onrender.com/match-job", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
@@ -91,7 +91,7 @@ function App() {
     formData.append("resume", selectedFile);
 
     try {
-      const response = await fetch("http://127.0.0.1:5000/upload-resume", {
+      const response = await fetch("https://ai-resume-job-matching.onrender.com/upload-resume", {
         method: "POST",
         body: formData,
       });

@@ -37,7 +37,7 @@ function AuthCard({ onLoginSuccess }) {
 
     try {
       const response = await fetch(
-        "http://127.0.0.1:5000/login",
+        "https://ai-resume-job-matching.onrender.com/login",
         {
           method: "POST",
           headers: {
@@ -91,7 +91,7 @@ function AuthCard({ onLoginSuccess }) {
 
     try {
       const response = await fetch(
-        "http://127.0.0.1:5000/register",
+        "https://ai-resume-job-matching.onrender.com/register",
         {
           method: "POST",
           headers: {
